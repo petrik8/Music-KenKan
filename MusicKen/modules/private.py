@@ -137,7 +137,7 @@ async def reload(client: Client, message: Message):
                         "💬 GROUP", url=f"https://t.me/{SUPPORT_GROUP}"
                     ),
                     InlineKeyboardButton(
-                        "OWNER 👮", url=f"https://t.me/kenkanasw"
+                        "OWNER 👮", url=f"https://t.me/{OWNER}"
                     )
                 ]
             ]
