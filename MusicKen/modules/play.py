@@ -500,7 +500,7 @@ async def play(_, message: Message):
         urls = True
     user_id = message.from_user.id
     user_name = message.from_user.first_name
-    rpk = f"[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+    rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
         if message.reply_to_message
