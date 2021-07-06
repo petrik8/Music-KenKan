@@ -23,6 +23,7 @@ from MusicKen.config import UPDATES_CHANNEL as updateschannel
 from MusicKen.config import que
 from MusicKen.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,BOT_USERNAME, OWNER
 from MusicKen.function.admins import admins as a
+from MusicKen.config import SUPPORT_GROUP as supportgroup
 from MusicKen.helpers.admins import get_administrators
 from MusicKen.helpers.channelmusic import get_chat_id
 from MusicKen.helpers.errors import DurationLimitError
@@ -513,7 +514,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
@@ -560,7 +561,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
@@ -639,7 +640,7 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
@@ -777,7 +778,7 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
@@ -1007,7 +1008,7 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],

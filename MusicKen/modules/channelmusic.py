@@ -23,7 +23,8 @@ from MusicKen.modules.play import convert_seconds
 from MusicKen.modules.play import time_to_seconds
 from MusicKen.modules.play import changeImageSize
 from MusicKen.config import BOT_NAME as bn
-from MusicKen.config import DURATION_LIMIT, SUPPORT_GROUP
+from MusicKen.config import DURATION_LIMIT
+from MusicKen.config import SUPPORT_GROUP as supportgroup
 from MusicKen.config import UPDATES_CHANNEL as updateschannel
 from MusicKen.config import que
 from MusicKen.function.admins import admins as a
@@ -521,7 +522,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{SUPPORT_GROUP}"),
+                    InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
