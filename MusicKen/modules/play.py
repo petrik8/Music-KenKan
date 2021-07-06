@@ -543,7 +543,8 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist")
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), 
+                    InlineKeyboardButton("📖 Playlist", callback_data="playlist")
                ],
             ]
         )
@@ -592,7 +593,8 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [ 
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), 
+                    InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
                ],
             ]
         )
@@ -675,7 +677,8 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [ 
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), 
+                    InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
                 ],
             ]
         )
@@ -815,7 +818,8 @@ async def ytplay(_, message: Message):
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [ 
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), 
+                    InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
                 ],
             ]
         )
@@ -1047,7 +1051,8 @@ async def lol_cb(b, cb):
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
                 [ 
-                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"),
+                    InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
                 ],
             ]
         )
