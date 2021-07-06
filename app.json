@@ -60,11 +60,11 @@
       "value": "https://telegra.ph/file/23a3b3708c7e1c04e1dfb.png"
     },        
     "API_ID": {
-      "description": "Masukan APP ID Silahkan Ambil dari my.telegram.org/apps atau t.me/scrapmanbot",
+      "description": "Masukan APP ID Silahkan Ambil dari my.telegram.org/apps atau @kenkanrobot",
       "required": true
     },   
     "API_HASH": {
-      "description": "Masukan API HASH Silahkan Ambil dari my.telegram.org/apps atau t.me/scrapmanbot",
+      "description": "Masukan API HASH Silahkan Ambil dari my.telegram.org/apps atau @kenkanrobot",
       "required": true
     },
     "PMPERMIT": {
