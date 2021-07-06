@@ -4,7 +4,7 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-**👋🏻 Hai Selamat Datang Kembali Di [{PROJECT_NAME}](https://telegra.ph/file/ed136c19e7f6afddb4912.jpg)
+**👋🏻 Hai Selamat Datang Kembali Di [{PROJECT_NAME}](f"https://t.me/{OWNER}")
 
 ⚪️ {PROJECT_NAME} Dapat Memutar Musik Di Obrolan Suara Grup Anda Serta Obrolan Suara Saluran
 
