@@ -96,7 +96,7 @@ f"""
 - /userbotjoin: Undang @{ASSISTANT_NAME} Userbot Ke Grup Anda
 """,
 f"""
-👋🏻 Hallo, Nama saya [{PROJECT_NAME}](https://telegra.ph/file/ed136c19e7f6afddb4912.jpg)
+👋🏻 Hallo, Nama saya [{PROJECT_NAME}](f"https://t.me/{OWNER}")
 Dikekolah oleh {OWNER}
 ┈───────────────────┈
 ☑️ Saya memiliki banyak fitur untuk anda yang suka lagu
