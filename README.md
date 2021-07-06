@@ -1,11 +1,11 @@
 <p align="center"><img src="https://2.bp.blogspot.com/-eBu3-f3vzW0/V3E8UnYXsfI/AAAAAAAADHI/lJrPAoLSE70aO0F3W9fruZ8O-qJY76MSwCLcB/s1600/gambar-gerak-gif-chip-and-dale-terbaru.gif" style="width:100%"></p>
 
-# Music-Ken
+# Music-KenKan
 <p align="center">
   <img src="https://telegra.ph/file/c8227ff23fa75b9d2b9f7.jpg">
 </p>
 <h1 align="center">
-  <b>🎶 MUSIK KEN</b>
+  <b>🎶 MUSIK KEN KAN</b>
 </h1>
 
 ![Repo 👁‍🗨](https://komarev.com/ghpvc/?username=kenkannih&color=red&style=flat-square&label=DILIHAT+👁‍🗨)
@@ -108,7 +108,7 @@ This bot is based on the original work done by [Rojserbest](http://github.com/ro
 DaisyXmusic is a modified version of [Callsmusic](https://github.com/callsmusic/callsmusic) for fit the needs of @DaisyXbot users
 
 #### Contribtors
--[VIKY](https://github.com/vckyou/Geez-MusicProject)
+- [VIKY](https://github.com/vckyou/Geez-MusicProject)
 - [Risman](https://github.com/mrismanaziz/Music-Man)
 - [Repi](https://github.com/collinfowel) : Dev on MusikVCG 
 - [InukaASiTH](https://github.com/InukaAsith): Dev
