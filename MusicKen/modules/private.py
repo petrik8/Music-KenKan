@@ -38,7 +38,7 @@ Dikekolah oleh {OWNER}
                     InlineKeyboardButton(
                         "ᴄʜᴀɴɴᴇʟ 📣", url=f"https://t.me/{UPDATES_CHANNEL}")],
                 [
-                    InlineKeyboardButton("🖇ɢɪᴛ ʜᴜʙ", url=f"{SOURCE_CODE}")
+                    InlineKeyboardButton("🌟 ɢɪᴛ ʜᴜʙ 🌟", url=f"{SOURCE_CODE}")
                 ]        
             ]
         ),
