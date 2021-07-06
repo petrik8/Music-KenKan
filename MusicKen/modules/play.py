@@ -59,32 +59,7 @@ def transcode(filename):
     ).overwrite_output().run()
     os.remove(filename)
 
-000p0opllLo"
-l000o*
 
-
-lkm
-Lollllo00k0k
-
-
-
-kl
-l0lll
-"llel
-
-
-
-"Loll
-kl
-
-
-
-ll0olooklllk00l
-Lo
-kl
-
-lol9llllo0ll
-0klk00lloo<00ko0o00oOKo0o0000o09*9kk*k**
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
     seconds = seconds % (24 * 3600)
