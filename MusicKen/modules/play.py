@@ -59,7 +59,32 @@ def transcode(filename):
     ).overwrite_output().run()
     os.remove(filename)
 
+000p0opllLo"
+l000o*
 
+
+lkm
+Lollllo00k0k
+
+
+
+kl
+l0lll
+"llel
+
+
+
+"Loll
+kl
+
+
+
+ll0olooklllk00l
+Lo
+kl
+
+lol9llllo0ll
+0klk00lloo<00ko0o00oOKo0o0000o09*9kk*k**
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
     seconds = seconds % (24 * 3600)
@@ -517,7 +542,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist")
+               ],
             ]
         )
         file_name = get_file_name(audio)
@@ -564,7 +591,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [ 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+               ],
             ]
         )
         requested_by = message.from_user.first_name
@@ -607,7 +636,9 @@ async def play(_, message: Message):
                         InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    [
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls")
+                    ],
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -643,7 +674,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [ 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                ],
             ]
         )
             requested_by = message.from_user.first_name
@@ -781,7 +814,9 @@ async def ytplay(_, message: Message):
                     InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [ 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                ],
             ]
         )
     requested_by = message.from_user.first_name
@@ -1011,7 +1046,9 @@ async def lol_cb(b, cb):
                     InlineKeyboardButton("💬GROUP", url=f"https://t.me/{supportgroup}"),
                     InlineKeyboardButton("💌CHANNEL", url=f"https://t.me/{updateschannel}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [ 
+                    InlineKeyboardButton(text="🗑 Close", callback_data="cls"), InlineKeyboardButton("📖 Playlist", callback_data="playlist") 
+                ],
             ]
         )
     requested_by = useer_name
