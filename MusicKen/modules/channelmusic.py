@@ -402,7 +402,7 @@ async def play(_, message: Message):
     user_id = message.from_user.id
     message.from_user.first_name
     user_name = message.from_user.first_name
-    rpk = f"[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+    rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
     if message.reply_to_message:
         entities = []
         toxt = message.reply_to_message.text or message.reply_to_message.caption
