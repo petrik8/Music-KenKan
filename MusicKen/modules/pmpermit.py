@@ -17,20 +17,20 @@ async def pmPermit(client: USER, message: Message):
         await USER.send_message(
             message.chat.id,
             f"""**Hay saya adalah Layanan**\n\n"
-"╭━━━━━━━━━━━━━━━━━╮"
-"**Assistant {PROJECT_NAME}**\n\n"
-"╰━━━━━━━━━━━━━━━━━╯\n\n"
-" **❗️ Rules:**\n\n"
-   "- Jangan Spam Pesan disini\n"
-   "- Jangan Spam Lagu Biar Ga Error\n"
-   "- Tutorial Cara Menggunakan bot Lihat di\n" 
-"@{UPDATES_CHANNEL}\n\n\n"
-
-"**👉 KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n"
-"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-" **💬 GROUP SUPPORT** : @{SUPPORT_GROUP}\n" 
-"**👮 OWNER :** @{OWNER}\n"
-"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰""",
+              "╭━━━━━━━━━━━━━━━━━╮"
+              "**Assistant {PROJECT_NAME}**\n\n"
+              "╰━━━━━━━━━━━━━━━━━╯\n\n"
+              " **❗️ Rules:**\n\n"
+                 "- Jangan Spam Pesan disini\n"
+                 "- Jangan Spam Lagu Biar Ga Error\n"
+                 "- Tutorial Cara Menggunakan bot Lihat di\n" 
+              "@{UPDATES_CHANNEL}\n\n\n"
+              
+              "**👉 KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n"
+              "▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
+              " **💬 GROUP SUPPORT** : @{SUPPORT_GROUP}\n" 
+              "**👮 OWNER :** @{OWNER}\n"
+              "▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰""",
         )
         return
 
