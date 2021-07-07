@@ -18,7 +18,8 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 
-from MusicKen.config import DURATION_LIMIT, OWNER
+from MusicKen.config import DURATION_LIMIT
+from MusicKen.config import OWNER
 from MusicKen.modules.play import arq
 
 
