@@ -3,6 +3,7 @@ TgCrypto
 py-tgcalls
 python-dotenv
 youtube_dl
+youtube-dl
 youtube_search_python
 requests
 aiohttp
