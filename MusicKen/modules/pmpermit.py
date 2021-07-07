@@ -16,21 +16,7 @@ async def pmPermit(client: USER, message: Message):
             return
         await USER.send_message(
             message.chat.id,
-            f"""**Hay saya adalah Layanan**
-              ╭━━━━━━━━━━━━━━━━━╮
-              **Assistant {PROJECT_NAME}**
-              ╰━━━━━━━━━━━━━━━━━╯
-              **❗️ Rules:**
-                 - Jangan Spam Pesan disini
-                 - Jangan Spam Lagu Biar Ga Error
-                 - Tutorial Cara Menggunakan bot Lihat di
-              @{UPDATES_CHANNEL}
-              
-              **👉 KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**
-              ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-              **💬 GROUP SUPPORT** : @{SUPPORT_GROUP}
-              **👮 OWNER :** @{OWNER}
-              ▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰"""
+            f"""**Hay saya adalah Layanan**\n╭━━━━━━━━━━━━━━━━━╮\n**Assistant {PROJECT_NAME}**\n╰━━━━━━━━━━━━━━━━━╯\n**❗️ Rules:**\n- Jangan Spam Pesan disini\n- Jangan Spam Lagu Biar Ga Error\n- Tutorial Cara Menggunakan bot Lihat di\n@{UPDATES_CHANNEL}\n\n**👉 KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n**💬 GROUP SUPPORT** : @{SUPPORT_GROUP}\n**👮 OWNER :** @{OWNER}\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰"""
         )
         return
 
