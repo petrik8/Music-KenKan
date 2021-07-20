@@ -14,30 +14,29 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Tambahkan saya sebagai admin grup Anda terlebih dahulu</b>",
+            "Tambahkan saya sebagai admin terlebih dahulu.",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "MusicKen"
+        user.first_name = "`LaguKamu Assistant`"
 
     try:
         await USER.join_chat(invitelink)
     except UserAlreadyParticipant:
         await message.reply_text(
-            f"<b>{user.first_name} sudah ada di obrolan Anda</b>",
+            f"{user.first_name} sudah ada di obrolan.",
         )
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>Flood Wait Error\n{user.first_name} tidak dapat bergabung dengan grup Anda karena banyaknya permintaan bergabung untuk userbot! Pastikan pengguna tidak dibanned dalam grup."
-            "\n\nAtau tambahkan Assistant bot secara manual ke Grup Anda dan coba lagi.</b>",
+            f"{user.first_name} tidak dapat bergabung dengan grup karena banyaknya permintaan bergabung untuk userbot! Pastikan pengguna tidak dibanned dalam grup / tambahkan Assistant secara manual ke Grup.",
         )
         return
     await message.reply_text(
-        f"<b>{user.first_name} berhasil bergabung dengan obrolan Anda</b>",
+        f"{user.first_name} berhasil bergabung.",
     )
 
 
@@ -48,8 +47,7 @@ async def rem(USER, message):
         await USER.leave_chat(message.chat.id)
     except:
         await message.reply_text(
-            f"<b>Pengguna tidak dapat meninggalkan grup Anda! Mungkin menunggu floodwaits."
-            "\n\nAtau keluarkan saya secara manual dari ke Grup Anda</b>",
+            f"Pengguna tidak dapat meninggalkan grup. Silahkan keluarkan saya secara manual.",
         )
         return
     
@@ -60,7 +58,7 @@ async def bye(client, message):
 
     left=0
     failed=0
-    lol = await message.reply("**Asisten Meninggalkan semua obrolan**")
+    lol = await message.reply("**Asisten meninggalkan semua obrolan**")
     async for dialog in USER.iter_dialogs():
         try:
             await USER.leave_chat(dialog.chat.id)
