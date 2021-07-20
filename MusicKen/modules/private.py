@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""Selamat datang di @LaguKamuBot, ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.
-Tekan start untuk mulai mendownload.(https://telegra.ph/file/95a28380fd98db2b8cf18.png)""",
+        f"""Selamat datang di [@LaguKamuBot](https://telegra.ph/file/f22022fe83debdff109cc.jpg), ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.
+Pilih start untuk mulai mendownload.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -30,12 +30,12 @@ Tekan start untuk mulai mendownload.(https://telegra.ph/file/95a28380fd98db2b8cf
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
-        f"""✅ **{PROJECT_NAME} telah aktif**""",
+        f"""🔊 {PROJECT_NAME} telah aktif""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Cara pengoperasian", url=f"https://t.me/c/1542548244/3"
+                        "•cara pengoperasian•", url=f"https://t.me/e3ggfpXKmGkxN2E1/6"
                     )
                 ]
             ]
@@ -75,10 +75,7 @@ def map(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [
-            [InlineKeyboardButton(text = '⚔️ ʙᴀɴᴛᴜᴀɴ', callback_data = f"help+1"),
-             InlineKeyboardButton(text = 'ᴛᴀᴍʙᴀʜᴋᴀɴ ➕', url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-            [InlineKeyboardButton(text = '👥 ɢʀᴏᴜᴘ', url=f"https://t.me/{SUPPORT_GROUP}"),
-             InlineKeyboardButton(text = 'ᴄʜᴀɴɴᴇʟ 📣', url=f"https://t.me/{UPDATES_CHANNEL}")]
+            [InlineKeyboardButton(text = '« previous', callback_data = f"help+1")]
         ]
     else:
         button = [
@@ -92,12 +89,12 @@ def map(pos):
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
-        f"""**Saya dapat memutar musik di obrolan suara grup & saluran telegram.‌‌**""",
+        f"""Layanan musik telegram.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Klik di sini untuk bantuan", url=f"https://t.me/c/1542548244/3"
+                        "•cara pengoperasian•", url=f"https://t.me/e3ggfpXKmGkxN2E1/6"
                     )
                 ]
             ]
@@ -110,15 +107,12 @@ async def ghelp(_, message: Message):
     & ~ filters.edited
 )
 async def reload(client: Client, message: Message):
-    await message.reply_text("""🔊 Bot berhasil dimulai ulang!\n❇️ Daftar admin telah diperbarui!""",
+    await message.reply_text("""🔊 Bot berhasil dimulai ulang!""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Pengoperasian", url=f"https://t.me/c/1542548244/3"
-                    ),
-                    InlineKeyboardButton(
-                        "Owner", url=f"https://t.me/{OWNER}"
+                        "👨🏻‍💻 Bot Owner", url=f"https://t.me/{OWNER}"
                     )
                 ]
             ]
