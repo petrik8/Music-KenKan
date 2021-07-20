@@ -1,3 +1,20 @@
+# Daisyxmusic (Telegram bot project )
+# Copyright (C) 2021  Inukaasith
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 from __future__ import unicode_literals
 
 import asyncio
@@ -18,7 +35,7 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 
-from MusicKen.config import DURATION_LIMIT, OWNER
+from MusicKen.config import DURATION_LIMIT
 from MusicKen.modules.play import arq
 
 
@@ -33,7 +50,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    m = message.reply("🔎 **Sedang Mencari Lagu...**")
+    m = message.reply("🔎 mencari lagu...")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -50,16 +67,16 @@ def song(client, message):
         results[0]["views"]
 
     except Exception as e:
-        m.edit("❌ Lagu Tidak ditemukan.\n\nCoba Masukan Judul lagu yang lebih jelas.")
+        m.edit("Lagu tidak ditemukan.\n\nCoba masukan judul lagu dengan benar.")
         print(str(e))
         return
-    m.edit("⬇️ **Sedang Mendownload Lagu**")
+    m.edit("🗳 sedang mendownload...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎤 Permintaan Dari: {rpk}**"
+        rep = "💿 diupload oleh **Lagu Kamu**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
@@ -74,7 +91,7 @@ def song(client, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("❌ Error")
+        m.edit("Error")
         print(e)
 
     try:
@@ -246,3 +263,163 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
+
+@Client.on_message(filters.command("saavn") & ~filters.edited)
+async def jssong(_, message):
+    global is_downloading
+    if len(message.command) < 2:
+        await message.reply_text("/saavn masukan judul lagu.")
+        return
+    if is_downloading:
+        await message.reply_text(
+            "Downloadan yang lain sedang berlangsung, coba lagi nanti"
+        )
+        return
+    is_downloading = True
+    text = message.text.split(None, 1)[1]
+    query = text.replace(" ", "%20")
+    m = await message.reply_text("🔎 **Sedang Mencari Lagu...**")
+    try:
+        songs = await arq.saavn(query)
+        if not songs.ok:
+            await message.reply_text(songs.result)
+            return
+        sname = songs.result[0].song
+        slink = songs.result[0].media_url
+        ssingers = songs.result[0].singers
+        await m.edit("Downloading")
+        song = await download_song(slink)
+        await m.edit("Uploading")
+        await message.reply_audio(audio=song, title=sname, performer=ssingers)
+        os.remove(song)
+        await m.delete()
+    except Exception as e:
+        is_downloading = False
+        await m.edit(str(e))
+        return
+    is_downloading = False
+
+
+# Deezer Music
+
+
+@Client.on_message(filters.command("deezer") & ~filters.edited)
+async def deezsong(_, message):
+    global is_downloading
+    if len(message.command) < 2:
+        await message.reply_text("/deezer masukan judul lagu")
+        return
+    if is_downloading:
+        await message.reply_text(
+            "Downloadan yang lain sedang berlangsung, coba lagi nanti"
+        )
+        return
+    is_downloading = True
+    text = message.text.split(None, 1)[1]
+    query = text.replace(" ", "%20")
+    m = await message.reply_text("🔎 **Sedang Mencari Lagu...**")
+    try:
+        songs = await arq.deezer(query, 1)
+        if not songs.ok:
+            await message.reply_text(songs.result)
+            return
+        title = songs.result[0].title
+        url = songs.result[0].url
+        artist = songs.result[0].artist
+        await m.edit("Downloading")
+        song = await download_song(url)
+        await m.edit("Uploading")
+        await message.reply_audio(audio=song, title=title, performer=artist)
+        os.remove(song)
+        await m.delete()
+    except Exception as e:
+        is_downloading = False
+        await m.edit(str(e))
+        return
+    is_downloading = False
+
+
+@Client.on_message(filters.command(["vsong", "video"]))
+async def ytmusic(client, message: Message):
+    global is_downloading
+    if is_downloading:
+        await message.reply_text(
+            "Download sedang berlangsung, coba lagi nanti"
+        )
+        return
+
+    urlissed = get_text(message)
+
+    pablo = await client.send_message(
+        message.chat.id, f"`Mencari {urlissed} dari Youtube, tunggu sebentar.`"
+    )
+    if not urlissed:
+        await pablo.edit("Sintaks perintah tidak valid, Silakan ketik `/help` untuk mengetahui lebih lanjut!")
+        return
+
+    search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
+    mi = search.result()
+    mio = mi["search_result"]
+    mo = mio[0]["link"]
+    thum = mio[0]["title"]
+    fridayz = mio[0]["id"]
+    thums = mio[0]["channel"]
+    kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
+    await asyncio.sleep(0.6)
+    url = mo
+    sedlyf = wget.download(kekme)
+    opts = {
+        "format": "best",
+        "addmetadata": True,
+        "key": "FFmpegMetadata",
+        "prefer_ffmpeg": True,
+        "geo_bypass": True,
+        "nocheckcertificate": True,
+        "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}],
+        "outtmpl": "%(id)s.mp4",
+        "logtostderr": False,
+        "quiet": True,
+    }
+    try:
+        is_downloading = True
+        with youtube_dl.YoutubeDL(opts) as ytdl:
+            infoo = ytdl.extract_info(url, False)
+            duration = round(infoo["duration"] / 60)
+
+            if duration > DURATION_LIMIT:
+                await pablo.edit(
+                    f"Video berdurasi lebih dari {DURATION_LIMIT} minute(s) tidak diperbolehkan, video yang ingin kamu download {duration} minute(s)"
+                )
+                is_downloading = False
+                return
+            ytdl_data = ytdl.extract_info(url, download=True)
+
+    except Exception:
+        # await pablo.edit(event, f"**Failed to download** \n**Error :** `{str(e)}`")
+        is_downloading = False
+        return
+
+    c_time = time.time()
+    file_stark = f"{ytdl_data['id']}.mp4"
+    capy = f"**Permintaan dari** `{urlissed}` \n**Judul :** `{thum}` \n**Dari channel :** `{thums}` \n**Link :** `{mo}`"
+    await client.send_video(
+        message.chat.id,
+        video=open(file_stark, "rb"),
+        duration=int(ytdl_data["duration"]),
+        file_name=str(ytdl_data["title"]),
+        thumb=sedlyf,
+        caption=capy,
+        supports_streaming=True,
+        progress=progress,
+        progress_args=(
+            pablo,
+            c_time,
+            f"`Mengupload lagu {urlissed} dari YouTube`",
+            file_stark,
+        ),
+    )
+    await pablo.delete()
+    is_downloading = False
+    for files in (sedlyf, file_stark):
+        if files and os.path.exists(files):
+            os.remove(files)
