@@ -310,7 +310,7 @@ async def m_cb(b, cb):
         else:
             callsmusic.pytgcalls.pause_stream(chet_id)
 
-            await cb.answer("Music Paused!")
+            await cb.answer("Music paused!")
             await cb.message.edit(
                 updated_stats(m_chat, qeue), reply_markup=r_ply("play")
             )
@@ -514,7 +514,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Cara Pengoperasian", url=f"https://t.me/c/1542548244/3"),
+                    InlineKeyboardButton("Music Downloader", url=f"https://t.me/lagukamubot"),
                 ],
                 [
                     InlineKeyboardButton(text="🗑 Close", callback_data="cls")
@@ -563,7 +563,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Cara Pengoperasian", url=f"https://t.me/c/1542548244/3"),
+                    InlineKeyboardButton("Music Downloader", url=f"https://t.me/lagukamubot"),
                 ],
                 [
                     InlineKeyboardButton(text="🗑 Close", callback_data="cls")
@@ -646,7 +646,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Cara Pengoperasian", url=f"https://t.me/c/1542548244/3"),
+                    InlineKeyboardButton("Music Downloader", url=f"https://t.me/lagukamubot"),
                 ],
                 [
                     InlineKeyboardButton(text="🗑 Close", callback_data="cls")
@@ -785,7 +785,7 @@ async def ytplay(_, message: Message):
             [
                 [
                     InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Cara Pengoperasian", url=f"https://t.me/c/1542548244/3"),
+                    InlineKeyboardButton("Music Downloader", url=f"https://t.me/lagukamubot"),
                 ],
                 [
                     InlineKeyboardButton(text="🗑 Close", callback_data="cls")
@@ -1017,7 +1017,7 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Cara Pengoperasian", url=f"https://t.me/c/1542548244/3"),
+                    InlineKeyboardButton("Music Downloader", url=f"https://t.me/lagukamubot"),
                 ],
                 [
                     InlineKeyboardButton(text="🗑 Close", callback_data="cls")
