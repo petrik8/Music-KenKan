@@ -35,7 +35,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "•cara pengoperasian•", url=f"https://t.me/e3ggfpXKmGkxN2E1/6"
+                        "Music downloader", url=f"https://t.me/lagukamubot"
                     )
                 ]
             ]
@@ -94,7 +94,7 @@ async def ghelp(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "•cara pengoperasian•", url=f"https://t.me/e3ggfpXKmGkxN2E1/6"
+                        "Music downloader", url=f"https://t.me/lagukamubot"
                     )
                 ]
             ]
