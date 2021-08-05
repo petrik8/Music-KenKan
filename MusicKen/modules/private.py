@@ -13,15 +13,13 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""Selamat datang di [@LaguKamuBot](https://telegra.ph/file/f22022fe83debdff109cc.jpg), ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.
+        f"""Selamat datang di [Lagu Kamu](https://telegra.ph/file/21116695a3c542de8a801.png), ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.
 Pilih start untuk mulai mendownload.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Start", callback_data = f"help+1"),
-                    InlineKeyboardButton(
-                        "Bot Owner", url=f"https://instagram.com/ahmd_rozii")]    
+                        "Start", callback_data = f"help+1")]    
             ]
         ),
         reply_to_message_id=message.message_id
