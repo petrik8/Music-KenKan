@@ -11,6 +11,6 @@ f"""
 """,
 
 f"""
-Masukkan judul secara detail untuk mendapatkan lagu dan video yang sesuai. Gunakan perintah /search untuk mendapatkan link lagu dan video yang kamu minta.
+Masukkan judul secara detail untuk mendapatkan lagu dan video yang sesuai. Gunakan perintah /search untuk mendapatkan link lagu dan video yang kamu minta. Jika bot tidak dapat digunakan silahkan hubungi [pemilik bot](t.me/ahmdrzii).
 """
       ]
