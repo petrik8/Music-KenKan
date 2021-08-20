@@ -41,7 +41,7 @@
 ### 💜 HEROKU
 
 <b>
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ahmdrozii/Music-KenKan"><img src="https://img.shields.io/badge/BUAT DIHEROKU-blue?style=for-the-badge&logo=heroku"width="310" height="50"/></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/petrik8/Music-KenKan"><img src="https://img.shields.io/badge/BUAT DIHEROKU-blue?style=for-the-badge&logo=heroku"width="310" height="50"/></a></p>
 </b>
 
 ## VIA Repl.it
