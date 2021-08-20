@@ -13,13 +13,27 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""Selamat datang di [Lagu Kamu](https://telegra.ph/file/21116695a3c542de8a801.png), ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.
-Pilih start untuk mulai mendownload.""",
+        f"""ZENO MSC adalah layanan musik telegram yang memiliki fitur:
+ × Memutar lagu di group 
+ × Mendownload lagu
+ × Mendownload video
+ × Mencari link youtube
+ × Mencari lirik lagu
+ × Klik tombol bantuan untuk informasi lebih lanjut
+
+🔓 izin owner untuk dapat menambahkan bot
+""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Start", callback_data = f"help+1")]    
+                        "BANTUAN", callback_data = f"help+1")],
+                [
+                    InlineKeyboardButton(
+                        "HUBUNGI OWNER", url=f"https://t.me/{SUPPORT_GROUP}")],
+                [
+                    InlineKeyboardButton(
+                        "+ TAMBAHKAN KE GROUP", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")]        
             ]
         ),
         reply_to_message_id=message.message_id
