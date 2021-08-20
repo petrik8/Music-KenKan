@@ -21,7 +21,7 @@ async def start_(client: Client, message: Message):
  × Mencari lirik lagu
  × Klik tombol bantuan untuk informasi lebih lanjut
 
-🔓 izin owner untuk dapat menambahkan bot
+🔓 izin [creator](@eleaxzeno) untuk dapat menambahkan bot
 """,
         reply_markup=InlineKeyboardMarkup(
             [
