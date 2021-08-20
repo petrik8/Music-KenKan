@@ -27,13 +27,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "BANTUAN", callback_data = f"help+1")],
-                [
-                    InlineKeyboardButton(
-                        "HUBUNGI OWNER", url=f"https://t.me/{SUPPORT_GROUP}")],
-                [
-                    InlineKeyboardButton(
-                        "+ TAMBAHKAN KE GROUP", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")]        
+                        "BANTUAN", callback_data = f"help+1")]    
             ]
         ),
         reply_to_message_id=message.message_id
