@@ -74,7 +74,7 @@ async def bye(client, message):
 @Client.on_message(filters.command(["userbotjoinchannel","ubjoinc"]) & ~filters.private & ~filters.bot)
 @authorized_users_only
 @errors
-async def addcchannel(client, message):
+async def addchannel(client, message):
     try:
       conchat = await client.get_chat(message.chat.id)
       conid = conchat.linked_chat.id
